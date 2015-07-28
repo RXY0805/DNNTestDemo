@@ -1,0 +1,4 @@
+C:\Wade\bin\Hello01.dll
+C:\Wade\bin\Hello01.pdb
+C:\Wade\2016\Hello01\obj\Debug\Hello01.dll
+C:\Wade\2016\Hello01\obj\Debug\Hello01.pdb

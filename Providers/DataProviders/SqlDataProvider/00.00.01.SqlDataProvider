@@ -1,0 +1,36 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}TAC_HelloWorld]') AND type in (N'U'))
+DROP TABLE {databaseOwner}[{objectQualifier}TAC_HelloWorld]
+GO
+
+CREATE TABLE {databaseOwner}{objectQualifier}TAC_HelloWorld
+    (
+    TextId int NOT NULL IDENTITY (1, 1),
+    HelloText nvarchar(255) NOT NULL,
+   
+    )  ON [PRIMARY]
+     TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+ALTER TABLE {databaseOwner}{objectQualifier}TAC_HelloWorld ADD CONSTRAINT
+    PK_{objectQualifier}TAC_HelloWorld PRIMARY KEY CLUSTERED 
+    (
+    TextId
+    ) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/
